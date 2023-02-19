@@ -1221,10 +1221,11 @@ Here’s a link to what appears to be the <a href="https://en.wikipedia.org/w/in
     </div>
   </div>
 
+  <a name="zbg"></a>
   <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
-        <a name="zbg"><img src="img/zbg-cover.png" style="width: 77%;" class="shadow rounded"></a>
+        <img src="img/zbg-cover.png" style="width: 77%;" class="shadow rounded">
       </div>
       <div class="col-lg-6">
         <h3>10. Zen Beer Garden</h3>
@@ -1257,11 +1258,11 @@ That was shortly before I became Buddhist.</p>
     </div>
   </div>
 
-
+  <a name="dbg"></a>
   <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
       <div class="col-10 col-sm-8 col-lg-6">
-        <a name="dbg"><img src="img/dbg-cover.png" style="width: 77%;" class="shadow rounded"></a>
+        <img src="img/dbg-cover.png" style="width: 77%;" class="shadow rounded">
       </div>
       <div class="col-lg-6">
         <h3>11. Deluxe Beer Garden</h3>
@@ -1530,6 +1531,7 @@ all ten balloons will win <span class="highlight">$40,000</span>.</p>
     <script type="text/javascript">
       let anchor = window.location.hash;
       if (anchor.length > 0) {
+
         anchor = anchor.slice(1);
         console.log(anchor)
 
@@ -1550,6 +1552,9 @@ all ten balloons will win <span class="highlight">$40,000</span>.</p>
           }
 
         }, 1000);
+
+        // https://stackoverflow.com/questions/4210798/how-to-scroll-to-top-of-page-with-javascript-jquery
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
       }
 
       /*setTimeout(function(){

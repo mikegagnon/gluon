@@ -1527,7 +1527,16 @@ all ten balloons will win <span class="highlight">$40,000</span>.</p>
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
-
+    <script type="text/javascript">
+      setTimeout(function(){
+        let anchor = window.location.hash;
+        if (anchor.length > 0) {
+          anchor = anchor.slice(1);
+          console.log(anchor)
+          document.querySelector(`[name="${anchor}"]`).scrollIntoView();
+        }
+      }, 1000);
+    </script>
       
   </body>
 </html>

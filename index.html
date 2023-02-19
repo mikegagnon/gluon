@@ -79,6 +79,11 @@
     <link href="heroes.css" rel="stylesheet">
   </head>
   <body>
+    <div id="spinner">
+      <center><div class="spinner-border text-primary" role="status" style="position: fixed;">
+        <span class="sr-only">Loading...</span>
+      </div></center>
+    </div>
     
 <main>
   <h1 class="visually-hidden">ALT text goes here? I don't know if alt-text readers display 'visually hidden' CSS.</h1>
@@ -1532,8 +1537,13 @@ all ten balloons will win <span class="highlight">$40,000</span>.</p>
       let anchor = window.location.hash;
       if (anchor.length > 0) {
 
+        document.querySelector(`main`).style.visibility= "hidden";
+
+
         anchor = anchor.slice(1);
-        console.log(anchor)
+        console.log(anchor);
+
+
 
         const INTERVAL = setInterval(function() {
           console.log("checking img");
@@ -1549,12 +1559,18 @@ all ten balloons will win <span class="highlight">$40,000</span>.</p>
             document.querySelector(`[name="${anchor}"]`).scrollIntoView();
             clearInterval(INTERVAL);
             console.log('clearly');
+            document.querySelector(`main`).style.visibility= "visible";
+            document.querySelector(`#spinner`).style.display= "none";
+
           }
 
         }, 1000);
 
         // https://stackoverflow.com/questions/4210798/how-to-scroll-to-top-of-page-with-javascript-jquery
         document.body.scrollTop = document.documentElement.scrollTop = 0;
+      } else {
+        document.querySelector(`#spinner`).style.display= "none";
+
       }
 
       /*setTimeout(function(){
